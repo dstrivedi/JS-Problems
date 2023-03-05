@@ -16,8 +16,9 @@ const Peak = (input,n) => {
     if(input[n-1] >= input[n-2]) return input[n-1]
 
     input.map((ele, i) => {
-        if(input[i+1] > ele && input[i+1] > input[i+2]) {
-            new_arr.push(input[i+1]);
+        if(input[i+1] >= ele && input[i+1] >= input[i+2]) {
+            // new_arr.push(input.indexOf(input[i+1])); //this return array of peak element's indices
+            new_arr.push(input[i+1])
         }
     })
 
