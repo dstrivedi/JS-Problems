@@ -34,6 +34,7 @@ const romanToInt = (s) => {
         if (obj[s[i]] < obj[s[i + 1]]) {
             // console.log(obj[s[i]], obj[s[i+1]])
             num += obj[s[i + 1]] - obj[s[i]]
+            // console.log(obj[s[i+1]]-obj[s[i]])
             i++
         } else {
             // console.log(obj[s[i]], obj[s[i+1]])
