@@ -13,7 +13,9 @@ and arr[1] + arr[3] = 5 + 1 = 6.
 const pairs = (arr,n,k) => {
     var m = new Map();
     var count = 0;
+    // console.log(m)
     for (var i = 0; i < n; i++) {
+        // console.log(k - arr[i])
         if (m.has(k - arr[i])) {
             count += m.get(k - arr[i]);
         }
