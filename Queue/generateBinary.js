@@ -17,7 +17,7 @@ function generatePrintBinary(n)
         // console.log("s1 -> ", s1)
         q.shift();
         // console.log("queue -> ",q)
-        console.log("s1 -> ",s1);
+        console.log(n," -> ",s1);
              
         // Store s1 before changing it
         var s2 = s1;
@@ -31,4 +31,24 @@ function generatePrintBinary(n)
     }
 }
 
-generatePrintBinary(5);
+function generatePrintBinary_alternative(n) {
+    for (let i = 1; i <= n; i++) {
+      let str = "";
+      let temp = i;
+    //   console.log(temp)
+      while (temp) {
+        if (temp & 1) {
+          str = "1" + str;
+        } else {
+          str = "0" + str;
+        }
+        // console.log(temp)
+        temp = temp >> 1;
+        // console.log(temp)
+      }
+      console.log(str);
+    }
+  }
+
+generatePrintBinary_alternative(5);
+// generatePrintBinary(13);

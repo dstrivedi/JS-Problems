@@ -1,3 +1,10 @@
+/*
+    outer loop i 
+    storing min_idx to i
+    inner loop j
+        if arr[j] < arr[min_idx] than changing value of min_idx to j 
+    swapping arr[min_idx] and arr[i] using temp var 
+*/
 const selection_sort = (arr,n) => {
     var min_idx, temp;
 
