@@ -39,3 +39,19 @@ console.log(validParenthesis('()[]{}'))
 console.log(validParenthesis("]"))
 console.log(validParenthesis("({{{{}}}))"))
 console.log(validParenthesis("([}}])"))
+
+const parenthesis = (str) => {
+	let arr = str.split("")
+    for(let i = 0 ; i < str.length ; i++) {
+        if(str[i] === "(" && arr.includes(')')){
+            arr.splice(arr.indexOf(str[i]),1)
+            arr.splice(arr.indexOf(')'),1)
+          	//i -= 2
+        } 
+    }
+    console.log(arr)
+    return arr.includes(')') || arr.includes('(') ? 0 : 1
+}
+
+console.log(parenthesis('(code))(code)'))
+console.log(parenthesis('(code)code()'))

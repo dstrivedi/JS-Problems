@@ -12,8 +12,6 @@
     min = 1, max = 56789
 */
 
-const { kStringMaxLength } = require("buffer")
-
 const getMinMax = (arr, n) => {
     //code here
 

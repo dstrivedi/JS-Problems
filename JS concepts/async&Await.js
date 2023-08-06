@@ -8,4 +8,17 @@ const showPosts = async () => {
     console.log(posts);
 }
 
-showPosts();
+// showPosts();
+
+console.log("----------user data ----------------")
+const getFirstUserData = async () => {
+    //get user list 
+    const userList = await fetch("https://jsonplaceholder.typicode.com/users")
+    const users = await userList.json()
+    console.log(users[0])
+}
+
+getFirstUserData()
+
+console.log("only await use")
+await Promise.resolve(console.log("Hello await"))

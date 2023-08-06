@@ -33,10 +33,30 @@ const Peak = (input,n) => {
     return new_arr;
 }
 
+const PeakUsingMap = (arr,n) => {
+    if(n === 1) return arr[0]
+    if(arr[0] >= arr[1]) return arr[0]
+    if(arr[n-1] >= arr[n-2]) return arr[n-1]
+    let peakEle =arr.map((ele,i) => {
+       if(ele > arr[i-1] && ele > arr[i+1]) {
+         return ele
+       }
+   }).filter((ele) => ele != undefined)
+   return peakEle
+}
+
 console.log(Peak([5, 10, 20, 15],4))
 console.log(Peak([10, 20, 15, 2, 23, 90, 67],7))
 console.log(Peak([1, 3, 20, 4, 1, 0],6))
 console.log(Peak([13],1))
 console.log(Peak([12,2],2))
+
+console.log("======================")
+console.log(PeakUsingMap([5, 10, 20, 15],4))
+console.log(PeakUsingMap([10, 20, 15, 2, 23, 90, 67],7))
+console.log(PeakUsingMap([1, 3, 20, 4, 1, 0],6))
+console.log(PeakUsingMap([13],1))
+console.log(PeakUsingMap([12,2],2))
+
 
 // Time complexity: O(n), One traversal is needed so the time complexity is O(n)

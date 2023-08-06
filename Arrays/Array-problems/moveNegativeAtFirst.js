@@ -19,11 +19,12 @@ const move = (arr) => {
         }
     }
     // console.log(pos,neg)
-    let new_arr = pos.concat(neg);
-    for (let i = 0; i <= new_arr.length - 1; i++) {
-        arr[i] = new_arr[i];
-    }
-    return arr;
+    let new_arr = neg.concat(pos);
+    // console.log(new_arr)
+    // for (let i = 0; i <= new_arr.length - 1; i++) {
+    //     arr[i] = new_arr[i];
+    // }
+    return new_arr;
 }
 
 

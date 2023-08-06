@@ -7,7 +7,7 @@ const reverseString = (str) => {
             words.push(str[i]);
             word = "";
         } else {
-            word += str[i];
+            word += str[i];         
         }
     }  
 
@@ -26,4 +26,4 @@ const reverseString = (str) => {
 
 // console.log(reverseString("geeks quiz practice code"));
 console.log(reverseString("i love programming very much"));
-console.log(reverseString("i.like.this.program.very.much"))
+console.log(reverseString("i.like.this.program.very.much"));

@@ -4,7 +4,7 @@
     You can call resolve and reject multiple times, but this is useless. Once a promise is finished, it can't restart.
 */
 
-let x = 0;
+let x = 10;
 let promise = new Promise((resolve, reject) => {
     setTimeout(() => {
         if (x === 0) {
@@ -19,7 +19,8 @@ let promise = new Promise((resolve, reject) => {
 
 // multiple callbacks
 promise.then((data) => {
-    console.log(data);
+    console.log(data)
+    return data;
 }).then(function (data) {
     console.log(data + ' 1');
 }).then(function (data) {
@@ -30,4 +31,31 @@ promise.then((data) => {
     console.log("always excutes!!")
 });
 
-console.log(promise)
+//console.log(promise) //Promise {<Pending>}
+
+async function getData() {
+    return await Promise.resolve('I made it!');
+}
+
+const data = getData(); 
+console.log(data) //Promise {<pending>}
+data.then((res) => {
+    console.log("---------------------")
+    console.log(res)
+})
+
+const myPromise = () => Promise.resolve('I have resolved!');
+
+function firstFunction() {
+    myPromise().then(res => console.log(res));
+    console.log('second');
+}
+
+async function secondFunction() {
+    console.log(await myPromise());
+    console.log('second');
+}
+
+console.log("----------")
+firstFunction();
+secondFunction();

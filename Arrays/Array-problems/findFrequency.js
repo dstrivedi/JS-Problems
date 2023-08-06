@@ -42,3 +42,19 @@ const findFrequency = (arr,n,find) => {
 
 console.log(findFrequency([1, 1, 1, 1, 1],5,1))
 console.log(findFrequency([1,2,3,4,3,3], 6,3))
+
+console.log(findFrequency(['a', 'b', 1, 'a', 'a', 2, 1],7,'a'))
+
+const mostFrequentObj = (arr) => {
+    let obj = {}
+    let s = new Set(arr)
+    s.forEach((ele) => {
+        obj[ele] = 0;
+        arr.map((a) => {
+            if(a === ele){
+                obj[ele]++  
+            }
+        })
+    })
+    return obj
+}

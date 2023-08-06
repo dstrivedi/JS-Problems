@@ -29,4 +29,4 @@ const common_with_loop = (arr1, arr2, arr3, n1, n2, n3) => {
 }
 
 console.log(common([1, 5, 10, 20, 40, 80], [6, 7, 20, 80, 100], [3, 4, 15, 20, 30, 70, 80, 120], 6, 5, 8))
-console.log(common([3,3,3],[3,3,3],[3,3,3],3,3,3))
+console.log(common_with_loop([3,3,3],[3,3,3],[3,3,3],3,3,3))

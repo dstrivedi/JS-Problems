@@ -30,10 +30,11 @@ let obj = {
 
 const romanToInt = (s) => {
     let num = 0;
-    for (i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length; i++) {
         if (obj[s[i]] < obj[s[i + 1]]) {
             // console.log(obj[s[i]], obj[s[i+1]])
             num += obj[s[i + 1]] - obj[s[i]]
+            console.log(num)
             // console.log(obj[s[i+1]]-obj[s[i]])
             i++
         } else {
@@ -46,6 +47,7 @@ const romanToInt = (s) => {
 }
 
 console.log(romanToInt('MCMXCIV'))
+console.log(romanToInt('LVIII'));
 
 /*
     num = 0

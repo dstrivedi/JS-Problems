@@ -11,16 +11,19 @@ const merge = (arr1, arr2) => {
             results.push(arr2[j])
             j++
         }
+        console.log(" first while loop:",results)
     }
 
     while(i < arr1.length) {
         results.push(arr1[i])
         i++
+        console.log(" second i while loop:", results)
     }
 
     while(j < arr2.length) {
         results.push(arr2[j])
         j++
+        console.log(" third j while loop:", results)
     }
 
     return results

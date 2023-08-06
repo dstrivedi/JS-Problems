@@ -14,7 +14,8 @@ const removeDups = (arr) => {
     for(let i = set_arr.length ; i < arr.length; i++){
         set_arr.push("_")
     }
-    return set_arr;
+    // return set_arr;
+    return [...new Set(arr)]
 }
 
 //without changing input arr
@@ -40,6 +41,6 @@ const removeDups_leetcode2 = (nums) => {
 }
 
 
-console.log(removeDups_leetcode2([1,1,2,2,2,3]))
+console.log(removeDups([1,1,2,2,2,3]))
 console.log(removeDups_leetcode2([0,0,1,1,1,2,2,3,3,4]))
 console.log(removeDups_leetcode2([1,1,1,1]))

@@ -1,7 +1,7 @@
 /*
     outer loop i 
     storing min_idx to i
-    inner loop j
+    inner loop j and intializing i+1
         if arr[j] < arr[min_idx] than changing value of min_idx to j 
     swapping arr[min_idx] and arr[i] using temp var 
 */

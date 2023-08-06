@@ -4,11 +4,11 @@ a = 5;
 var a;
 console.log(a);
 
-b = 6;
+// b = 6;
 // const b = 0;
 // console.log(b); //Cannot access 'b' before initialization
 
-c = 1;
+// c = 1;
 // let c;
 // console.log(c); //Cannot access 'b' before initialization
 
@@ -20,7 +20,7 @@ const x = 12;
     // const x =11; 
 }
 
-codeHoist = () => {
+var codeHoist = () => {
     a = 10;
     let y =5;
 }
@@ -35,7 +35,7 @@ function foo() {
 }
 
 foo(); // Uncaught TypeError: foo is not a function
-var foo = function () { }
+// var foo = function () { }
 
 bar(); // Uncaught ReferenceError: Cannot access 'bar' before initialization
 let bar = function () { }

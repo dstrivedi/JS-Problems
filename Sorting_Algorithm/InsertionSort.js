@@ -12,11 +12,12 @@ const insertionSort = (arr) => {
         let key = arr[i];
         let j = i - 1;
         while(j >= 0 && arr[j] > key) {
-            console.log(key, arr[i])
             arr[j+1] = arr[j]
             j = j - 1
+            console.log(key, arr[i],j,arr)
         }
         arr[j+1] = key
+        console.log(j,arr[j+1],arr)
     }
     return arr
 }

@@ -31,3 +31,14 @@ function job2() {
         }, 1000);
     });
 }
+
+
+console.log("---------------calling url using promises ---------------")
+
+const getUserData = () => {
+    return fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => users[0])
+}
+
+getUserData().then((result) => console.log(result))

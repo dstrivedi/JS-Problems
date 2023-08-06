@@ -19,7 +19,7 @@ const palindrome = (str) => {
         }
     }
     return string.split("").reverse().join("").toLowerCase() == string.toLowerCase()
-  }
+}
 
 console.log(palindrome("eye"));
 console.log(palindrome("_eye"));
