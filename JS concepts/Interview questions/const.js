@@ -6,16 +6,16 @@ function constLog() {
 
     // console.log(a)// refernece error - cannot access a before initialization
     const a = 11
-    console.log(a) //11
+    console.log("inside function :",a) //11
 }
 if(true) {
     //a = 12 //assignment to constant variable
 
     const a = 14
-    console.log(a)
+    console.log("inside block:",a)//14
 }
 
-console.log(a)
+console.log("global: ",a) //10
 constLog()
 
 console.log("------------")

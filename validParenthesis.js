@@ -4,7 +4,7 @@ const validParenthesis = (str) => {
     for (let i = 0; i < str.length; i++) {
         if(str[i] === "(" || str[i] === "{" || str[i] === "[") {
             arr.push(str[i])
-            // console.log(arr)
+            console.log(arr)
         } else {
             if(str[i] === ")" && arr[arr.length - 1] === "(") {
                 // console.log(str[i])
@@ -55,3 +55,4 @@ const parenthesis = (str) => {
 
 console.log(parenthesis('(code))(code)'))
 console.log(parenthesis('(code)code()'))
+console.log(parenthesis("([)]"))

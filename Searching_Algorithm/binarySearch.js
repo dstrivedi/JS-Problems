@@ -12,7 +12,7 @@ const binarySearch = (arr, key) => {
         // console.log(mid, l, h)
         if(arr[mid] === key) return mid
         if(arr[mid] > key){
-            r = mid - 1
+            h = mid - 1
         } else {
             l = mid + 1
         }

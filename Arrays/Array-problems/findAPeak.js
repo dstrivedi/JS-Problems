@@ -7,7 +7,20 @@
     Output: 20 or 90
     Explanation: The element 20 has neighbors 10 and 15, both of them are less than 20, similarly 90 has neighbors 23 and 67.
 */
-
+/**
+ * 
+ * @param {*} input 
+ * @param {*} n 
+ * @returns 
+ * 
+ * if n==1 return only element
+ * check for first element if arr[0] >= arr[1] return arr[0]
+ * check for last element if arr[n-1] >= arr[n-2] return arr[n-1]
+ * 
+ * loop through the arr using map or for  loop
+ * check i+1th element with ith and i+2th element 
+ * if i+1th element is bigger than those element push to the new arr
+ */
 const Peak = (input,n) => {
     let new_arr = []
 

@@ -32,6 +32,7 @@ var lengthOfLongestSubstring = function(s) {
         for(let i = 0 ; i < s.length; i++) {
             str = ""
             for(let j = i;j < s.length;j++){
+                // console.log(str, ans)
                 if(!str.includes(s[j])) {
                     str += s[j]
                     ans.push(str)
@@ -44,30 +45,7 @@ var lengthOfLongestSubstring = function(s) {
             }
         }
         return Math.max(...(ans.map(ele => ele.length)))
-    
-    /**
-        var letters = s.split("");
-        var max = 0;
-        var result = new Map();
-        var start = 0;
-        
-        for (var i = 0; i < letters.length; i++) {
-            if (!result.has(letters[i])) {
-                result.set(letters[i], i);
-            } else {
-                i = result.get(letters[i]);
-                result.clear();
-            }
-            
-            if (max < result.size) {
-                max = result.size;
-            }
-        }
-        return result;
-    */
 };
-
-
 
 console.log(lengthOfLongestSubstring('abcabcbb'))
 console.log(lengthOfLongestSubstring("bbbbbbbbb"))
@@ -76,3 +54,33 @@ console.log(lengthOfLongestSubstring("dvdf"))
 console.log(lengthOfLongestSubstring(""))
 console.log(lengthOfLongestSubstring("cdd"))
 console.log(lengthOfLongestSubstring("ckilbkd"))
+
+const using_map = (s) => {
+    var letters = s.split("");
+    var max = 0;
+    var result = new Map();
+    var start = 0;
+    
+    for (var i = 0; i < letters.length; i++) {
+        if (!result.has(letters[i])) {
+            result.set(letters[i], i);
+        } else {
+            i = result.get(letters[i]);
+            result.clear();
+        }
+        
+        if (max < result.size) {
+            max = result.size;
+        }
+    }
+    return result.size;
+}
+
+console.log("============================")
+console.log(using_map('abcabcbb'))
+console.log(using_map("bbbbbbbbb"))
+console.log(using_map("pwwkew"))
+console.log(using_map("dvdf"))
+console.log(using_map(""))
+console.log(using_map("cdd"))
+console.log(using_map("ckilbkd"))

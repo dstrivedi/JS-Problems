@@ -21,6 +21,8 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
  */
 
+
+//brute-force - O(n^2)
 const twoSum = (nums, target) => {
     let ans = []
     for(let i = 0 ; i < nums.length ; i++) {
@@ -33,9 +35,33 @@ const twoSum = (nums, target) => {
     }
     return ans
 }
-
 console.log(twoSum([2,7,11,15],9))
 console.log(twoSum([3,2,4],6))
 console.log(twoSum([3,3],6))
 console.log(twoSum([1,3,4,5],4))
 console.log(twoSum([3,2,3],6))
+console.log("-----------------------------------------")
+
+//using sorting - O(log n)
+const twoSum_sorting = (nums, target) => {
+    nums.sort((a,b) => a - b);
+    let low = 0;
+    let pair = []
+    let high = nums.length - 1;
+    while(low < high) {
+        console.log(nums[low], nums[high])
+        if(nums[low] + nums[high] === target) {
+            pair.push(nums[low] , nums[high])
+        }
+        (nums[low] + nums[high] < target) ? low++ : high--;
+    }
+    return pair;
+}
+
+console.log(twoSum_sorting([2,7,11,15],9))
+console.log(twoSum_sorting([3,2,4],6))
+// console.log(twoSum_sorting([3,3],6))
+// console.log(twoSum_sorting([1,3,4,5],4))
+// console.log(twoSum_sorting([3,2,3],6))
+
+

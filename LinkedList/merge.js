@@ -33,7 +33,7 @@ const mergeTwoLists = (l1, l2) => {
         }
         currentNode = currentNode.next
     }
-    // currentNode = l1 || l2
+    currentNode = l1 || l2
     return tempNode.next;
 };
 

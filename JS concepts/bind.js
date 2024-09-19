@@ -6,7 +6,7 @@
  * When the code is run below, the printName() function returns “Matthew” because it was invoked at the global   scope and the name variable was assigned the value “Matthew” at the global scope:
  */
 
-let name = "Matthew"
+let name = "Matthew";
 // this.name = "Matthew";
 const person = {
     name: "Mark",
@@ -17,12 +17,11 @@ const person = {
 }
 
 const printName = person.getName
-// console.log(printName()) 
-//Matthew - pointing outer scope
+console.log(printName())  //undefined
 
 //with bind - we can pass the specified 'this' value and call the original function
 const boundName = person.getName.bind(person)
-console.log(boundName()) // Mark
+console.log(boundName()) // Markw
 
 var pokemon = {
     name: "Pika",
@@ -39,5 +38,5 @@ var pokemonName = function() {
     console.log(this.getPokemon() + " I choose you")
 }
 
-var  logPokemonName = pokemonName.bind(pokemon)
+var logPokemonName = pokemonName.bind(pokemon)
 logPokemonName()
