@@ -4,14 +4,14 @@
 
 let jobSequencing = (arr) => {
   arr.sort((a, b) => b[2] - a[2]);
-  //   console.log(arr);
+    console.log(arr);
   let max = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i][1] > max) {
       max = arr[i][1];
     }
   }
-  //   console.log(max);
+  console.log(max);
   let result = [];
   let cnt = 0;
   let profit = 0;
@@ -20,11 +20,11 @@ let jobSequencing = (arr) => {
   }
 
   for (let i = 0; i < arr.length - 1; i++) {
-    // console.log(arr[i][1]);
+    console.log(arr[i][1]);
     for (let j = max; j >= 0; j--) {
       if (result[j] == -1) {
         result[j] = i;
-        // console.log(result);
+        console.log(result);
         cnt += 1;
         profit += arr[i][2];
         break;
@@ -47,21 +47,21 @@ console.log(
   ])
 );
 
-console.log(
-  jobSequencing([
-    [1, 2, 100],
-    [2, 1, 19],
-    [3, 2, 27],
-    [4, 1, 25],
-    [5, 1, 15],
-  ])
-);
+// console.log(
+//   jobSequencing([
+//     [1, 2, 100],
+//     [2, 1, 19],
+//     [3, 2, 27],
+//     [4, 1, 25],
+//     [5, 1, 15],
+//   ])
+// );
 
-console.log(
-  jobSequencing([
-    [1, 4, 20],
-    [2, 1, 10],
-    [3, 2, 40],
-    [4, 2, 30],
-  ])
-);
+// console.log(
+//   jobSequencing([
+//     [1, 4, 20],
+//     [2, 1, 10],
+//     [3, 2, 40],
+//     [4, 2, 30],
+//   ])
+// );

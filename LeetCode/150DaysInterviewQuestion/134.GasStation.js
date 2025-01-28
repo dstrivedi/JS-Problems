@@ -39,8 +39,10 @@ var canCompleteCircuit = function (gas, cost) {
   let intake = 0;
   let starting_point = 0;
   for (let i = 0; i < gas.length; i++) {
+    console.log(intake)
     total_intake += gas[i] - cost[i];
     intake += gas[i] - cost[i];
+    console.log(total_intake, intake)
     if (intake < 0) {
       intake = 0;
       starting_point = i + 1;

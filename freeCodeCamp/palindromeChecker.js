@@ -19,7 +19,13 @@ const palindrome = (str) => {
         }
     }
     return string.split("").reverse().join("").toLowerCase() == string.toLowerCase()
-  }
+}
+  
+function palindrome1(str) {
+    let regex = /[a-zA-Z0-9]/ig;
+    str = str.match(regex).join("");
+    return str.split("").reverse().join("") = str;
+}
 
 console.log(palindrome("eye"));
 console.log(palindrome("_eye"));

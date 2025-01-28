@@ -1,6 +1,7 @@
 const validParenthesis = (str) => {
     const arr = [];
-    if(str.length % 2 !== 0) return false
+    // str length is odd, return false
+    if (str.length % 2 !== 0) return false
     for (let i = 0; i < str.length; i++) {
         if(str[i] === "(" || str[i] === "{" || str[i] === "[") {
             arr.push(str[i])

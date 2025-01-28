@@ -23,6 +23,7 @@ Output: 1
 var hIndex = function (citations) {
   citations.sort((a, b) => b - a);
   let cnt = 0;
+  console.log(citations)
   for (let i = 0; i < citations.length; i++) {
     if (citations[i] > i) {
       cnt += 1;

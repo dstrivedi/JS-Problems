@@ -26,24 +26,40 @@ const pairs = (arr,n,k) => {
         }
     }
     return count;
-    /*for(let i = 0 ; i < n ; i++) {
-        for(let j = i+1; j < n; j++) {
-            if(arr[i] + arr[j] === k) {
-                cnt += 1
-            }
-        }
-    }*/
-    /*let ar = [];
-    arr.forEach((elementi,i) => {
-        arr.forEach((elementj,j) => {
-            if((j > i) && (elementi + elementj == k)){
-                cnt += 1
-                ar.push({elementi,elementj})            
-            }
-        });
-    });
-    return cnt*/
 }
+
+// Brute force O(N^2)
+const countPairsWithSum = (arr, n, k) => {
+  let cnt = 0;
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      if (arr[i] + arr[j] === k) {
+        cnt += 1;
+      }
+    }
+  }
+  return cnt;
+};
+
+const countPairsWithSum2 = (arr, n, k) => {
+    arr.sort((a, b) => a - b);
+    left = 0;
+    right = n - 1;
+    count = 0;
+    while (left < right) {
+        let sum = arr[left] + arr[right];
+        if (sum == k) {
+            count += 1;
+            left += 1;
+            right -= 1;
+        } else if (sum < k) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    return count;
+};
 
 console.log(pairs([1, 5, 7, 1],4,6))
 console.log(pairs([1, 1, 1, 1],4,2))

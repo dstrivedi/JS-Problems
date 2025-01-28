@@ -44,9 +44,9 @@ function maxSubarraySum1(arr,n){
     let sum = arr[0];
     let max = arr[0];
     for(let i = 1 ; i < n;i++) {
-        sum = sum + arr[i]
-        if(sum < arr[i]) sum = arr[i]
-        if(sum > max) max=sum
+        sum = sum + arr[i];
+        if (sum < arr[i]) sum = arr[i];
+        if (sum > max) max = sum;
     }
     return max
 }

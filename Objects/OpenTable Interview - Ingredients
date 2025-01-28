@@ -1,0 +1,59 @@
+/**
+ * Recommends dishes based on matching ingredients.
+ * @param {Array} menu - List of dishes, each with a name and list of ingredients.
+ * @param {Array} ingredients - List of ingredients the customer likes.
+ * @param {number} k - Maximum number of recommendations to return.
+ * @returns {Array} - List of dish names sorted by matched ingredients, with the dishes that have the most matches appearing at the top. 
+ *
+ * Example:
+ * const menu = [
+ *   { name: "Margherita Pizza", ingredients: ["cheese", "tomato", "basil"] }, 
+ *   { name: "Pepperoni Pizza", ingredients: ["cheese", "tomato", "pepperoni"] },
+ * ];
+ * recommend(menu, ["cheese", "tomato"], 1); // ["Margherita Pizza"]
+ */
+function recommend(menu, ingredients, k) {
+    //  let result = [];
+    //  let obj = {};
+    //  for (let m in menu) {
+    //    let ing = menu[m]["ingredients"];
+    //    let count = 0;
+    //    for (let ing1 in ingredients) {
+    //      if (ing.includes(ingredients[ing1])) {
+    //        count += 1;
+    //        obj[menu[m]["name"]] = count;
+    //      }
+    //    }
+    //  }
+    //  let entries = Object.entries(obj);
+    //  entries.sort((a, b) => b[1] - a[1]);
+    //  for (let i in entries) {
+    //    if (result.length < k) {
+    //      result.push(entries[i][0]);
+    //    }
+    //  }
+    //  return result;
+    // Write your code here
+  return menu.map((dish) => ({ name: dish.name, matchCount: dish.ingredients.filter((ing) => ingredients.includes(ing)).length })).filter((dish) => dish.matchCount > 0).sort((a, b) => b.matchCount - a.matchCount).map((dish) => dish.name).slice(0,k);
+    // .filter((dish) => dish.matchCount > 0).sort((a, b) => b.matchCount - a.matchCount).slice(0, k).map((dish) => dish.name);
+    
+}
+
+
+// Example usage:
+const menu = [
+  { name: "Pepperoni Pizza", ingredients: ["cheese", "pepperoni"]},
+  { name: "Margherita Pizza", ingredients: ["cheese", "tomato", "basil"] },
+  { name: "Caesar Salad", ingredients: ["lettuce", "croutons", "parmesan"] },
+  { name: "Spaghetti Carbonara", ingredients: ["pasta", "egg", "parmesan", "bacon"] },
+];
+
+
+console.log(recommend(menu, ["cheese", "tomato"], 2)); 
+// ["Margherita Pizza", "Pepperoni Pizza"]
+
+console.log(recommend(menu, ["parmesan"], 1)); 
+// // ["Caesar Salad"]
+
+console.log(recommend(menu, ["chicken"], 3)); 
+// // []

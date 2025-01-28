@@ -22,9 +22,11 @@ const trap = (height) => {
     maxRight.push(max);
   }
   maxRight.reverse();
+  console.log(maxLeft, maxRight)
   for (let i = 0; i < maxLeft.length; i++) {
     min.push(Math.min(maxLeft[i], maxRight[i]));
   }
+  console.log(min)
   for (let i = 0; i < height.length; i++) {
     sum += min[i] - height[i] >= 0 ? min[i] - height[i] : 0;
   }

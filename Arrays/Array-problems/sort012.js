@@ -1,5 +1,6 @@
 const sort012 = (arr,n) => {
     // return arr.sort()
+    // console.log(arr.sort((a, b) => a - b));
     let cnt0 = 0;
     let cnt1 = 0;
     let cnt2 = 0;

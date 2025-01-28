@@ -87,6 +87,7 @@ function random(){
 
 //code 10
 console.log("\n--------------------code 10----------------")
+var poowerLevel = 99;
 let hero = {
     powerLevel: 99,
     getPower(){
@@ -114,7 +115,7 @@ const a1 = function(){
 
     const c = {
         //global object as this is an arrow function
-        func2: ()=>{
+        func2: () => {
             console.log("Inside c :",this);
         }
     }

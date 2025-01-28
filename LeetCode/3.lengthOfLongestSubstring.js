@@ -48,12 +48,12 @@ var lengthOfLongestSubstring = function(s) {
 };
 
 console.log(lengthOfLongestSubstring('abcabcbb'))
-console.log(lengthOfLongestSubstring("bbbbbbbbb"))
-console.log(lengthOfLongestSubstring("pwwkew"))
-console.log(lengthOfLongestSubstring("dvdf"))
-console.log(lengthOfLongestSubstring(""))
-console.log(lengthOfLongestSubstring("cdd"))
-console.log(lengthOfLongestSubstring("ckilbkd"))
+// console.log(lengthOfLongestSubstring("bbbbbbbbb"))
+// console.log(lengthOfLongestSubstring("pwwkew"))
+// console.log(lengthOfLongestSubstring("dvdf"))
+// console.log(lengthOfLongestSubstring(""))
+// console.log(lengthOfLongestSubstring("cdd"))
+// console.log(lengthOfLongestSubstring("ckilbkd"))
 
 const using_map = (s) => {
     var letters = s.split("");
@@ -62,25 +62,40 @@ const using_map = (s) => {
     var start = 0;
     
     for (var i = 0; i < letters.length; i++) {
-        if (!result.has(letters[i])) {
-            result.set(letters[i], i);
-        } else {
-            i = result.get(letters[i]);
-            result.clear();
-        }
-        
-        if (max < result.size) {
-            max = result.size;
-        }
+        console.log(result)
+        if (result.has(letters[i]) && result.get(letters[i]) >= start) {
+            start = result.get(letters[i]) + 1;
+        } 
+        result.set(letters[i], i);
+        // result.clear();
+        max = Math.max(max, i - start + 1);
     }
-    return result.size;
+    return max;
+}
+
+// sliding window
+const sliding_window = (s) => {
+    var maxLength = 0;
+    var left = 0;
+    let charSet = new Set();
+
+    for (let right = 0; right < s.length; right++) { 
+        while (charSet.has(s[right])) {
+            charSet.delete(s[left]);
+            left++;
+        }
+
+        charSet.add(s[right]);
+        maxLength = Math.max(max, right - left + 1);
+    }
+    return maxLength;
 }
 
 console.log("============================")
 console.log(using_map('abcabcbb'))
-console.log(using_map("bbbbbbbbb"))
-console.log(using_map("pwwkew"))
-console.log(using_map("dvdf"))
-console.log(using_map(""))
-console.log(using_map("cdd"))
-console.log(using_map("ckilbkd"))
+// console.log(using_map("bbbbbbbbb"))
+// console.log(using_map("pwwkew"))
+// console.log(using_map("dvdf"))
+// console.log(using_map(""))
+// console.log(using_map("cdd"))
+// console.log(using_map("ckilbkd"))

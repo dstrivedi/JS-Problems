@@ -4,10 +4,11 @@ const array_clone = (input) => {
 
 let arr = [1, 2, 4, 0]
 let arr3 = [...arr]
+arr3[0] = 0;
 let arr4 = arr
 let arr5 = Array.from(arr)
 let arr2 = array_clone([1, 2, 4, 0]);
-console.log(arr2)
+// console.log(arr2)
 arr.push(5)
-console.log(arr, arr2, arr3, arr4, arr5)
+console.log(arr, arr3)
 

@@ -59,7 +59,7 @@ var rotate = function (nums, k) {
   //     nums.pop();
   //   }
   k = k % nums.length;
-  //   console.log(k);
+    console.log(k);
   reverseArr(nums, 0, nums.length - 1);
   reverseArr(nums, 0, k - 1);
   reverseArr(nums, k, nums.length - 1);
